@@ -229,7 +229,7 @@ MariaDB [triggers]> CREATE or REPLACE TRIGGER `emp_details_BINS`
 Query OK, 0 rows affected (0.09 sec)
 
 MariaDB [triggers]> INSERT INTO emp_details VALUES (334, ' Ana ', ' King', 'ANA',
-    -> ’212.212.21201', '2013-02-05', 'it_prog', 17000, .50);
+    -> Â’212.212.21201', '2013-02-05', 'it_prog', 17000, .50);
     -> $$
 Query OK, 1 row affected (0.36 sec)
 
@@ -553,26 +553,6 @@ MariaDB [csd2204w18]> create or replace trigger `class_activity_UP`
     -> END IF;
     -> END$$
 Query OK, 0 rows affected (0.47 sec)
-
-MariaDB [csd2204w18]> update into custom set purchaseAmount = 1000 where id = 1;
-    -> $$
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'into custom set purchaseAmount = 1000 where id = 1' at line 1
-MariaDB [csd2204w18]> update custom set purchaseAmount = 1000 where id = 1;
-    -> $$
-Query OK, 0 rows affected (0.00 sec)
-Rows matched: 0  Changed: 0  Warnings: 0
-
-MariaDB [csd2204w18]> select *from custom$$
-+------+--------+---------------------------+----------------+----------------+
-| Id   | Name   | Email                     | PurchaseAmount | MembershipType |
-+------+--------+---------------------------+----------------+----------------+
-|  101 | John   | john.thomsan@gmail.com    |        1000000 | Gold           |
-|  102 | Shawn  | shawn.michaels@gmail.com  |         500000 | Silver         |
-|  103 | Wilson | wilson@gmail.com          |         150000 | Bronze         |
-|  104 | dawson | dawsonwinehouse@gmail.com |        1000000 | Gold           |
-+------+--------+---------------------------+----------------+----------------+
-4 rows in set (0.00 sec)
-
 MariaDB [csd2204w18]> update custom set purchaseAmount = 1000 where id = 101;
     -> $$
 Query OK, 1 row affected (0.20 sec)
